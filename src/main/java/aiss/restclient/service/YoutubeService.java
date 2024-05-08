@@ -1,21 +1,22 @@
 package aiss.restclient.service;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import aiss.restclient.model.Youtube.caption.CaptionSearch;
-import aiss.restclient.model.Youtube.channel.ChannelSearch;
-import aiss.restclient.model.Youtube.comment.CommentSearch;
-import aiss.restclient.model.Youtube.videoSnippet.VideoSnippetSearch;
+import aiss.restclient.model.caption.CaptionSearch;
+import aiss.restclient.model.channel.ChannelSearch;
+import aiss.restclient.model.comment.CommentSearch;
+import aiss.restclient.model.videoSnippet.VideoSnippetSearch;
 
 @Service
 public class YoutubeService {
     
-    //@Autowired
-    RestTemplate restTemplate = new RestTemplate();
+    @Autowired
+    RestTemplate restTemplate;
   
     public ChannelSearch getChannelWithId(String token,String part, String id) {
         String uri = String.format("https://www.googleapis.com/youtube/v3/channels?key=%s&part=%s&id=%s",token,part,id);
