@@ -1,9 +1,8 @@
 package aiss.restclient.controller;
 
 import java.util.ArrayList;
+import java.util.List;
 
-import aiss.restclient.model.comment.AuthorChannelId;
-import aiss.restclient.model.comment.CommentSnippet;
 import aiss.restclient.model.comment.CommentSnippet__1;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
